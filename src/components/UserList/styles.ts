@@ -89,4 +89,10 @@ export const Avatar = styled.div`
     &.bot {
         background-color: var(--mention-detail);
     }
+
+    > img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+    }
 `;

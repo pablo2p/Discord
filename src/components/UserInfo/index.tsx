@@ -1,15 +1,16 @@
 import React from 'react';
 
 import { Container, Profile, Avatar, UserData, Icons, MicIcon, HeadphoneIcon, SettingsIcon } from './styles';
+import perfil from '../../assets/profile.png';
 
 const UserInfo: React.FC = () => {
     return (
         <Container>
             <Profile>
-                <Avatar />
+                <Avatar><img src={perfil} alt="profile" /></Avatar>
                 <UserData>
                     <strong>Pablo Paixão</strong>
-                    <span>#312321</span>
+                    <span>#9995</span>
                 </UserData>
             </Profile>
 

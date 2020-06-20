@@ -3,6 +3,8 @@ import React, { useRef, useEffect } from 'react';
 import ChannelMessage, { Mention } from '../ChannelMessages';
 
 import { Container, Messages, InputWrapper, Input, InputIcon } from './styles';
+import perfil from '../../assets/profile.png';
+import bot_perfil from '../../assets/bot.jpg';
 
 const ChannelData: React.FC = () => {
     const messagesRef = useRef() as React.MutableRefObject<HTMLDivElement>;
@@ -18,28 +20,35 @@ const ChannelData: React.FC = () => {
     return (
         <Container>
             <Messages ref={messagesRef}>
-                {/* <ChannelMessage 
+                <ChannelMessage
                     author="Pablo Paixão"
                     date="20/06/2020"
-                    content="Renan é muito gay!"
-                /> */}
-                {Array.from(Array(15).keys()).map((n) => (
+                    content="Hello Server ;D!"
+                    avatar={perfil}
+                />
+                <ChannelMessage
+                    author="Happy"
+                    date="20/06/2020"
+                    content="Aye Sir!"
+                />
+                {/* {Array.from(Array(3).keys()).map((n) => (
                     <ChannelMessage 
                     key={n}
                     author="Pablo Paixão"
                     date="20/06/2020"
-                    content="Renan é muito gay!"
+                    content="Hello Server ;D!"
                 />
-                ))}
+                ))} */}
 
                 <ChannelMessage 
-                    author="Renan Henrique"
+                    author="Erza Scarlet"
                     date="20/06/2020"
                     content={
                         <>
-                            <Mention>@Pablo Paixão</Mention>, sim, eu sou gay!
+                            <Mention>@Pablo Paixão</Mention>, Nice Server!
                         </>
                     }
+                    avatar={bot_perfil}
                     hasMention
                     isBot
                 />

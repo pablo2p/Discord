@@ -1,19 +1,24 @@
 import React from 'react';
 
 import { Container, Role, User, Avatar } from './styles';
+import perfil from '../../assets/profile.png';
+import bot_perfil from '../../assets/bot.jpg';
+import nouser from '../../assets/nouser.png';
 
 interface UserProps {
     nickname: string;
+    avatar?: string;
     isBot?: boolean;
 }
 
 const UserRow: React.FC<UserProps> = ({
     nickname,
+    avatar,
     isBot
 }) => {
     return (
         <User>
-            <Avatar className={isBot ? 'bot' : ''} />
+            <Avatar className={isBot ? 'bot' : ''}><img src={avatar ? avatar : nouser} alt="photo_profile" /></Avatar>
 
             <strong>{nickname}</strong>
 
@@ -25,41 +30,12 @@ const UserRow: React.FC<UserProps> = ({
 const UserList: React.FC = () => {
     return (
         <Container>
-            <Role>Disponível -1</Role>
-            <UserRow nickname="Pablo Paixão" />
+            <Role>Disponível - 2</Role>
+            <UserRow nickname="Pablo Paixão" avatar={perfil} />
+            <UserRow nickname="Erza Scarlet" isBot avatar={bot_perfil} />
 
-            <Role>Offline - 18</Role>
-            <UserRow nickname="Renan Henrique" isBot />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
-            <UserRow nickname="Renan Henrique" />
+            <Role>Offline - 1</Role>
+            <UserRow nickname="Happy" />
         </Container>
     )
 };

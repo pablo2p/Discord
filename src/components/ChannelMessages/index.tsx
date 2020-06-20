@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Container, Avatar, Message, Header, Content } from './styles';
+import nouser from '../../assets/nouser.png';
 export { Mention } from './styles';
 
 export interface Props {
@@ -9,6 +10,7 @@ export interface Props {
     content: string | React.ReactElement | React.ReactNode;
     hasMention?: boolean;
     isBot?: boolean;
+    avatar?: string;
 }
 
 const ChannelMessages: React.FC<Props> = ({
@@ -16,11 +18,12 @@ const ChannelMessages: React.FC<Props> = ({
     date,
     content,
     hasMention,
-    isBot
+    isBot,
+    avatar
 }) => {
     return (
         <Container className={hasMention ? 'mention' : ''}>
-            <Avatar className={isBot ? 'bot' : ''} />
+            <Avatar className={isBot ? 'bot' : ''}><img src={avatar ? avatar : nouser} alt="profile_photo" /></Avatar>
 
             <Message>
                 <Header>
